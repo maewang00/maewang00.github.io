@@ -4,22 +4,19 @@
 }
 
 canvas{
+	position: fixed;
     background-image: linear-gradient(#0D334A, #0B1D29 75%);
     height: 100%;
     width: 100%;
-    position: relative;
-    opacity: 0.95;
+    opacity: 0.95; 
 }
 
 body {
-	/*padding-bottom: 100px;*/
-	/*padding-bottom: 1300%;*/
+	/*padding-bottom: 1000%;*/
 	margin: 0px;
-	margin-bottom: -2000px;
 }
 
 html {
-	height: 855px;
 	margin: 0px;
 	padding-bottom: 100px;
 }
@@ -54,25 +51,17 @@ html {
 }
 
 
-
-
-
-
-
-
-
-
 #introduction {
-	position: relative;
+	display: flex;
+	flex-direction: column;
 	text-align: center;
-	bottom: 680px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	top: 100px;
 	z-index: 2;
-}
-
-#click {
-	position: relative;
-	top: 170px;
-	z-index: 3;
 }
 
 .intro {
@@ -80,63 +69,43 @@ html {
 	font-family: Kailasa;
 	font-size: 32px;
 	letter-spacing: 1px;
-	line-height: 240%;
+	line-height: 280%;
 }
 
-.intro-cloud {
+#click {
 	position: relative;
-	text-align: center;
+	top: 130px;
+	z-index: 4;
 }
 
 #cloud {
 	position: relative;
-	top: -40px;
-	opacity: 0.8;
+	bottom: 50px;
+	z-index: 3;
 }
 
 #shadow-cloud {
-	position: relative;
-	top: -260px;
-	left: 1.5%;
-	z-index: -1;
+	position: absolute;
+	right: 15%;
+	top: 50%;
 }
 
-
-
-
-
-
-
-
-/*.intro {
-	color: white;
-	font-family: Kailasa;
-	font-size: 32px;
-	letter-spacing: 1px;
-	line-height: 240%;
-	z-index: 6;
-}*/
-
-/*#click {
-	color: white;
-	font-family: Kailasa;
-	font-size: 32px;
-	letter-spacing: 1px;
-	position: relative;
-	text-align: center;
-	top: 150px;
-	left: 5px;
-	z-index: 6;
-}*/
-
-#click:hover{
+#click:hover {
 	cursor: pointer;
 	transition: 0.5s;
 	opacity: 0.5;
 }
 
+#post-desc {
+	color: white;
+	font-family: Kailasa;
+	font-size: 32px;
+	letter-spacing: 1px;
+	line-height: 280%;
+}
+
 /*#cloud img:hover{
 	cursor: pointer;
-	transition: 0.5s;
+	transition: 0.2s;
 	opacity: 0.5;
 }*/
