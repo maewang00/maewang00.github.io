@@ -1,12 +1,17 @@
  $(document).ready(function() {
 
- 	$("#post-desc").hide();
+ 	// $("#post-desc").hide();
  	console.log("Elementary, my dear.");
 
  	$("#click").click(function(){
- 		$(".intro").fadeOut(1000);
+ 		$(".intro").hide();
+ 		// $(".intro").fadeOut(1000);
+ 		$("#click").hide();
+ 		// $("#post-desc").show();
+ 		$("#cloud").hide();
  		$("#post-desc").fadeIn(3000);
  		$("#cloud img").attr("src","assets/images/cloud.png");
+ 		$("#cloud").fadeIn(1000);
  		$("#cloud").css("top", 10);
  		$("canvas").css("background-image", "linear-gradient(#0A5471, #427264)");
  		$("body").css("height", 10000);

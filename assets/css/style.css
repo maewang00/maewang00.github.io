@@ -102,6 +102,7 @@ html {
 	font-size: 32px;
 	letter-spacing: 1px;
 	line-height: 280%;
+	display: none;
 }
 
 /*#cloud img:hover{
