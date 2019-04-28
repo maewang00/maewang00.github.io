@@ -1,3 +1,98 @@
+	var streams = [];
+	var fadeInterval = 1.6;
+	var symbolSize = 15;
+
+	function setup() {
+	  var cnv = createCanvas(250, window.innerHeight); //window.innerHeight
+	  // centerCanvas();
+	  cnv.parent('bit-rain');
+	  background(255, 255, 255, 0);
+
+	  var x = 0;
+	  for (var i = 0; i <= width / symbolSize; i++) {
+	    var stream = new Stream();
+	    stream.generateSymbols(x, random(-2000, 0));
+	    streams.push(stream);
+	    x += symbolSize;
+	  }
+
+	  textFont('Consolas');
+	  textSize(symbolSize);
+	}
+
+	// function centerCanvas() {
+	//   var x = (windowWidth - width) / 2;
+	//   var y = (windowHeight - height) / 2;
+	//   cnv.position(x, y);
+	// }
+
+	function draw() {
+		clear();
+	  background(255, 255, 255, 17.5);
+	  streams.forEach(function(stream) {
+	    stream.render();
+	  });
+	}
+
+	function Symbol(x, y, speed, first, opacity) {
+	  this.x = x;
+	  this.y = y;
+	  this.value;
+	  this.speed = speed;
+	  this.first = first;
+	  this.opacity = opacity;
+	  this.switchInterval = round(random(2, 25));
+	  this.setToRandomSymbol = function() {
+	    var charType = round(random(0, 5));
+	    if (frameCount % this.switchInterval == 0) {
+	      if (charType > 1) {
+	        // set it to Katakana
+	        this.value = //round(random(0,1));
+	        String.fromCharCode(
+	          0x30A0 + round(random(0, 96))
+	        );
+	      } else {
+	        // set it to numeric
+	        this.value = round(random(0,9)); //round(random(0,1));
+	      }
+	    }
+	  }
+	  this.rain = function() {
+	    this.y = (this.y >= height) ? 0 : this.y += this.speed;
+	  }
+	}
+
+	function Stream() {
+	  this.symbols = [];
+	  this.totalSymbols = round(random(5, 60));
+	  this.speed = random(2, 10);
+	  this.generateSymbols = function(x, y) {
+	    var opacity = 255;
+	    var first = round(random(0, 4)) == 1;
+	    for (var i =0; i <= this.totalSymbols; i++) {
+	      symbol = new Symbol(x, y, this.speed, first, opacity);
+	      symbol.setToRandomSymbol();
+	      this.symbols.push(symbol);
+	      opacity -= (255 / this.totalSymbols) / fadeInterval;
+	      y -= symbolSize;
+	      first = false;
+	    }
+	  }
+	  this.render = function() {
+	    this.symbols.forEach(function(symbol) {
+	      if (symbol.first) {
+	        fill(140, 255, 170, symbol.opacity);
+	      } else {
+	        fill(0, 255, 70, symbol.opacity);
+	      }
+	      text(symbol.value, symbol.x, symbol.y);
+	      symbol.rain();
+	      symbol.setToRandomSymbol();
+	    });
+	  }
+	}
+
+
  $(document).ready(function() {
 
  	// $("#post-desc").hide();
@@ -12,15 +107,47 @@
  		$("#post-desc").fadeIn(3000);
  		$("#cloud img").attr("src","assets/images/cloud.png");
  		$("#cloud").fadeIn(1000);
+ 		$("#bit-rain").fadeIn(3000);
  		$("#cloud").css("top", 10);
  		$("canvas").css("background-image", "linear-gradient(#0A5471, #427264)");
- 		$("body").css("height", 10000);
+ 		$("body").css("height", 5000);
+ 		$("#card1").css("display", "flex");
+ 		$("#card2").css("display", "flex");
  		goMovie(60);
  	})
 
+ 	$(window).scroll(function() {
+ 		var $height = $(window).scrollTop();
+ 	  if($height > 378) {
+ 	  		$("#bit-rain").appendTo("#new-dest");
+ 			$("#bit-rain").css("position", "fixed");
+ 			$("#bit-rain").css("top", 50);
+ 			$("#bit-rain").css("left", "41.7%"); //works only for mac fullscreen
+ 			$("#bit-rain").css("transform", "translateX(-50%)");
+ 		} else {
+ 			$("#bit-rain").appendTo("#introduction");
+ 			// $("#introduction").css("display", "flexbox");
+ 			$("#bit-rain").css("transform", "translateX(-30%)");
+ 			$("#bit-rain").css("position", '');
+ 			$("#bit-rain").css("top", '');
+ 			$("#bit-rain").css("left", '');
+
+ 		}
+ 		// } else if ($height <= 375) {
+ 		// 	$("#bit-rain").css("position", "absolute");
+ 		// 	$("#bit-rain").css("top", "54.2%");
+ 		// }
+ 	});
+
  	function moveCloud() {
+
  	}
 
+
+
+
+
+ 	
 
 
 // 	const distanceToNextImage = -450;
@@ -318,8 +445,9 @@
 	});
 	canvas.addEventListener('mousemove', function(e){
 	    var e = e || window.event;
-	    mouse_ball.x = e.pageX;
-	    mouse_ball.y = e.pageY;
+	    console.log(e);
+	    mouse_ball.x = e.screenX; //e.pageX;
+	    mouse_ball.y = e.screenY - 115;//e.pageY;
 	});
 
 });

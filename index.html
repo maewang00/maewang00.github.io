@@ -5,7 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="assets/js/script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
+		<script src="assets/js/script.js"></script>    
 	</head>
 	<body>
 		<div id="top-bar">
@@ -18,17 +19,30 @@
 		</div>
 
 		<canvas id="particle-system"></canvas>
+		<!-- <div id="bit-rain"></div> -->
+		<div class="sector" id="card1">
+			<div id="left">
+				<img src="assets/images/selfimg.jpg" alt="cloud" height="300" width="300">
+				<i>“My dream? I dream of winning a <br>lifetime’s worth of googly eyes. <br>Think of all that power… How <br>tempting, and irresponsible!”<br></i>
+				-Mae 2017
+			</div>
+
+			<div id="right">
+				<h3>Hi! I’m Mae Wang.</h3><h4><u>Currently:</u></h4> A shrimpy UC Berkeley CS first-year looking for a CS internship! <h5>- I have no job <br>- I like matcha ice cream <br>- I’m sick of crossroads <br>- I like art <br>- I LOVE shiba inu & corgi <br>- I HATE mushroom-shaped mushrooms</h5>
+			</div>
+		</div>
+		<div class="sector" id="card2"></div>
+		<div id="ending"></div>
 
 		<div id="introduction">
 			<div class="intro" id="desc">Dear mysterious cloud, <br>What bits of wonder do you hold to yourself? <br> Say, may you show me?</div>
 			<div id="post-desc">Let there be bits!</div>
-			<div id=cloudy>
+			<div id="cloudy">
 				<div class="intro" id="click">Click me!</div>
 				<div class="intro-cloud" id="cloud"><img src="assets/images/cloud-group.png" alt="cloud" height="250" width="400"></div>
-				<!-- <div class="intro-cloud" id="cloud"><img src="assets/images/cloud.png" alt="cloud" height="250" width="400"></div>
-				<div class="intro-cloud" id="shadow-cloud"><img src="assets/images/cloud-shadow.png" alt="cloud-shadow" height="250" width="400"></div> -->
 			</div>
+			<div id="bit-rain"></div>
 		</div>
-
+		<div id="new-dest"></div>
 	</body>
 </html>
