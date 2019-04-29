@@ -93,7 +93,6 @@
 	}
 
  $(document).ready(function() {
-
  	// $("#post-desc").hide();
  	console.log("Elementary, my dear.");
 
@@ -113,6 +112,14 @@
  		$("#card1").css("display", "flex");
  		$("#card2").css("display", "flex");
  		$("#ending").show();
+ 		$("#end-clouds").show();
+ 		$(".ecloud").each(function( index ) {
+ 			$(this).css({
+ 		    	left : ((Math.random() * window.innerWidth) - 50)
+ 		    	// opacity : ((Math.random()) + 0.5)
+ 		    	// bottom : ((Math.random() * 10) - 3)
+ 		  	});
+ 		});
  		goMovie(60);
  	})
 
@@ -141,10 +148,6 @@
  		// 	$("#bit-rain").css("top", "54.2%");
  		// }
  	});
-
- 	function moveCloud() {
-
- 	}
 
 
 

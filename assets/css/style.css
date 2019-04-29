@@ -194,6 +194,8 @@ html {
 }
 
 #ending {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -202,6 +204,21 @@ html {
 	top: 6500px;
 	z-index: 7;
 	display: none;
+}
+
+#end-clouds {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	top: 6900px;
+	opacity: 0.9;
+	display: none;
+	z-index: 8;
+}
+
+.ecloud {
+	position: absolute;
+	opacity: 0.7;
 }
 
 pre {
