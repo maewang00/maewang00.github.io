@@ -92,8 +92,6 @@
 	  }
 	}
 
-var isdown = false;
-
  $(document).ready(function() {
 
  	// $("#post-desc").hide();
@@ -120,17 +118,16 @@ var isdown = false;
 
  	$(window).scroll(function() {
  		var $height = $(window).scrollTop();
- 	  if($height > 378) {
- 	  		// $("#bit-rain").appendTo("#new-dest");
+ 		console.log($height);
+ 	  if($height >= 378) {
  			$("#new-dest").css("position", "fixed");
  			$("#new-dest").css("top", 50);
- 			isdown = true;
+ 			// $("#bit-rain").appendTo("#new-dest");
  			// $("#bit-rain").css("left", "41.7%"); //works only for mac fullscreen
  			// $("#bit-rain").css("transform", "translateX(-50%)");
- 		} else if ($height < 378 && isdown) {
- 			console.log("hi help me");
+ 		} else {
  			$("#new-dest").css("position", "absolute");
- 			$("#new-dest").css("top", 425); //"54%"
+ 			$("#new-dest").css("top", ""); //"54%"
  			// $("#bit-rain").appendTo("#introduction");
  			// $("#introduction").css("display", "flexbox");
  			// $("#bit-rain").css("transform", "translateX(-30%)");
