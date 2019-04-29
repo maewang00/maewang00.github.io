@@ -113,7 +113,7 @@
  		$("#card2").css("display", "flex");
  		$(".ecloud").each(function( index ) {
  			$(this).css({
- 		    	left : ((Math.random() * window.innerWidth) - 450)
+ 		    	left : ((Math.random() * window.innerWidth) - 453)
  		    	// opacity : ((Math.random()) + 0.5)
  		    	// bottom : ((Math.random() * 10) - 3)
  		  	});
