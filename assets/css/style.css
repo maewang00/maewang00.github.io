@@ -172,10 +172,6 @@ html {
 	font-size:700%;
 }
 
-#ending {
-	display: none;
-}
-
 #left {
 	display: flex;
 	flex-direction: column;
@@ -186,6 +182,29 @@ html {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+
+#ending {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	top: 6500px;
+	/*text-align: center;*/
+	z-index: 7;
+	display: none;
+}
+
+
+pre {
+    display: block;
+    font-size: 18px;
+    color: white;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
 }
 /*.sector {
 	width: 100%;

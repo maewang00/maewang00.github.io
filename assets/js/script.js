@@ -113,6 +113,7 @@
  		$("body").css("height", 7000);
  		$("#card1").css("display", "flex");
  		$("#card2").css("display", "flex");
+ 		$("#ending").show();
  		goMovie(60);
  	})
 
