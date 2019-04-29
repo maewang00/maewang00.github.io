@@ -111,8 +111,6 @@
  		$("body").css("height", 7000);
  		$("#card1").css("display", "flex");
  		$("#card2").css("display", "flex");
- 		$("#ending").show();
- 		$("#end-clouds").show();
  		$(".ecloud").each(function( index ) {
  			$(this).css({
  		    	left : ((Math.random() * window.innerWidth) - 50)
@@ -120,6 +118,8 @@
  		    	// bottom : ((Math.random() * 10) - 3)
  		  	});
  		});
+ 		$("#ending").show();
+ 		$("#end-clouds").show();
  		goMovie(60);
  	})
 
