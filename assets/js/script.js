@@ -28,7 +28,7 @@
 
 	function draw() {
 		clear();
-	  background(255, 255, 255, 17.5);
+	  background(255, 255, 255, 16.5);
 	  streams.forEach(function(stream) {
 	    stream.render();
 	  });
@@ -110,7 +110,7 @@
  		$("#bit-rain").fadeIn(3000);
  		$("#cloud").css("top", 10);
  		$("canvas").css("background-image", "linear-gradient(#0A5471, #427264)");
- 		$("body").css("height", 5000);
+ 		$("body").css("height", 7000);
  		$("#card1").css("display", "flex");
  		$("#card2").css("display", "flex");
  		goMovie(60);
