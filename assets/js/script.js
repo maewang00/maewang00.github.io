@@ -92,6 +92,7 @@
 	  }
 	}
 
+var isdown = false;
 
  $(document).ready(function() {
 
@@ -120,18 +121,22 @@
  	$(window).scroll(function() {
  		var $height = $(window).scrollTop();
  	  if($height > 378) {
- 	  		$("#bit-rain").appendTo("#new-dest");
- 			$("#bit-rain").css("position", "fixed");
- 			$("#bit-rain").css("top", 50);
- 			$("#bit-rain").css("left", "41.7%"); //works only for mac fullscreen
- 			$("#bit-rain").css("transform", "translateX(-50%)");
- 		} else {
- 			$("#bit-rain").appendTo("#introduction");
+ 	  		// $("#bit-rain").appendTo("#new-dest");
+ 			$("#new-dest").css("position", "fixed");
+ 			$("#new-dest").css("top", 50);
+ 			isdown = true;
+ 			// $("#bit-rain").css("left", "41.7%"); //works only for mac fullscreen
+ 			// $("#bit-rain").css("transform", "translateX(-50%)");
+ 		} else if ($height < 378 && isdown) {
+ 			console.log("hi help me");
+ 			$("#new-dest").css("position", "absolute");
+ 			$("#new-dest").css("top", 425); //"54%"
+ 			// $("#bit-rain").appendTo("#introduction");
  			// $("#introduction").css("display", "flexbox");
- 			$("#bit-rain").css("transform", "translateX(-30%)");
- 			$("#bit-rain").css("position", '');
- 			$("#bit-rain").css("top", '');
- 			$("#bit-rain").css("left", '');
+ 			// $("#bit-rain").css("transform", "translateX(-30%)");
+ 			// $("#bit-rain").css("position", '');
+ 			// $("#bit-rain").css("top", '');
+ 			// $("#bit-rain").css("left", '');
 
  		}
  		// } else if ($height <= 375) {
