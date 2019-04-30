@@ -47,13 +47,13 @@
 	    if (frameCount % this.switchInterval == 0) {
 	      if (charType > 1) {
 	        // set it to Katakana
-	        this.value = //round(random(0,1));
-	        String.fromCharCode(
-	          0x30A0 + round(random(0, 96))
-	        );
+	        this.value = round(random(0,1));
+	        // String.fromCharCode(
+	        //   0x30A0 + round(random(0, 96))
+	        // );
 	      } else {
 	        // set it to numeric
-	        this.value = round(random(0,9)); //round(random(0,1));
+	        this.value = round(random(0,1)); //round(random(0,9));
 	      }
 	    }
 	  }
