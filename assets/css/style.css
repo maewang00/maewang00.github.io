@@ -43,7 +43,8 @@ html {
 }
 
 #logo {
-	margin-right: 50%;
+	/*margin-right: 50%;*/
+	margin-right: 58%;
 }
 
 .bar-content:hover {
@@ -93,7 +94,7 @@ html {
 
 #click:hover {
 	cursor: pointer;
-	transition: 0.5s;
+	transition: 0.25s;
 	opacity: 0.5;
 }
 
@@ -178,8 +179,31 @@ html {
 	font-size: 25px;
 }
 
+#card2 h2{
+	font-size:200%;
+	margin: 0px;
+	cursor: pointer;
+}
+
+#rasterizer:hover{
+	margin: 0px;
+	cursor: pointer;
+	transition: 0.2s;
+	opacity: 0.7;
+}
+
+/*#card2:hover{
+	margin: 0px;
+	cursor: pointer;
+	transition: 0.2s;
+	opacity: 0.8;
+}*/
+
+
 #card2 h3{
 	font-size:700%;
+	margin: 0px;
+	cursor: default;
 }
 
 #left {
