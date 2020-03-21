@@ -185,6 +185,11 @@ html {
 	cursor: pointer;
 }
 
+#rasterizer{
+  background-color: #008080;
+
+}
+
 #rasterizer:hover{
 	margin: 0px;
 	cursor: pointer;
